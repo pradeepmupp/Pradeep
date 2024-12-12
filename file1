@@ -1,3 +1,31 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - hosts: Ansiblehost
   tasks:
   - name: create docker image
@@ -13,4 +41,26 @@
   tasks:
   - name: create container
     command: docker run -d --name hello_world_server -p 8084:8080 pradeepmupp/hello_world
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
