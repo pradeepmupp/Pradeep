@@ -1,0 +1,19 @@
+- name:      Install Nginx on Managed Node
+  # This playbook's name is "Install Nginx on Managed Node"
+  hosts: dockerhost
+  # Targets the hosts defined in the inventory file
+  become: true
+  # Use sudo for the tasks (escalates privileges to root)
+
+  tasks:
+    - name: Install Nginx
+      # This task installs the Nginx web server package
+      yum:
+        name: nginx      # Specifies the package name "nginx"
+        state: present   # Installed if not already present
+    - name: Start and enable Nginx
+      # This task starts Nginx and enables to start on boot
+      service:
+        name: nginx       # Specifies the service name "nginx"
+        state: started    # Ensures the Nginx service is running
+        enabled: true     # Enable the service to start on boot
